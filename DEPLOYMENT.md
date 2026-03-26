@@ -200,16 +200,16 @@ Unregister-ScheduledTask -TaskName "EyeRestReminder" -Confirm:$false
 | 项目 | 值 |
 |------|-----|
 | 用途 | 个人/学校邮件管理 |
-| 客户端 ID | (见 .env 或 Google Cloud Console) |
-| 客户端密钥 | (见 .env 或 Google Cloud Console) |
+| 客户端 ID | (见 .secrets.md) |
+| 客户端密钥 | (见 .secrets.md) |
 | 创建日期 | 2026-03-26 |
 
 ### 产品通道 (Likely You 对外)
 | 项目 | 值 |
 |------|-----|
 | 用途 | 产品相关邮件、对外沟通 |
-| 客户端 ID | (见 .env 或 Google Cloud Console) |
-| 客户端密钥 | (见 .env 或 Google Cloud Console) |
+| 客户端 ID | (见 .secrets.md) |
+| 客户端密钥 | (见 .secrets.md) |
 | 创建日期 | 2026-03-26 |
 
 **gog CLI 配置:**
