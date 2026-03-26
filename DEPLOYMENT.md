@@ -22,8 +22,8 @@ Windows 11 Host
 | Gateway HTTP | `http://localhost:18789` |
 | Bridge | `http://localhost:18790` |
 | Health Check | `http://localhost:18789/healthz` |
-| Gateway Token | 见 `.secrets.md` |
-| Dashboard URL | `http://localhost:18789/#token=<GATEWAY_TOKEN>` |
+| Gateway Token | `20cb9cbc35655f6ace2aab9b6f02e059c155934cf5f79ebad73547180032308a` |
+| Dashboard URL | `http://localhost:18789/#token=20cb9cbc35655f6ace2aab9b6f02e059c155934cf5f79ebad73547180032308a` |
 
 ---
 
@@ -82,7 +82,7 @@ C:\Users\32247\Desktop\openclaw\          # 完整源码 repo
 | 项目 | 值 |
 |------|-----|
 | 状态 | 已启用 |
-| Hooks Token | 见 `.secrets.md` |
+| Hooks Token | `4fc73f95a2b71217a0e9133fbc7055df170bf183a528ec267ffb8761141d0bf6` |
 | Wake 端点 | `POST http://localhost:18789/hooks/wake` |
 | Agent 端点 | `POST http://localhost:18789/hooks/agent` |
 
@@ -200,22 +200,22 @@ Unregister-ScheduledTask -TaskName "EyeRestReminder" -Confirm:$false
 | 项目 | 值 |
 |------|-----|
 | 用途 | 个人/学校邮件管理 |
-| 客户端 ID | 见 `.secrets.md` |
-| 客户端密钥 | 见 `.secrets.md` |
+| 客户端 ID | (见 .env 或 Google Cloud Console) |
+| 客户端密钥 | (见 .env 或 Google Cloud Console) |
 | 创建日期 | 2026-03-26 |
 
 ### 产品通道 (Likely You 对外)
 | 项目 | 值 |
 |------|-----|
 | 用途 | 产品相关邮件、对外沟通 |
-| 客户端 ID | 见 `.secrets.md` |
-| 客户端密钥 | 见 `.secrets.md` |
+| 客户端 ID | (见 .env 或 Google Cloud Console) |
+| 客户端密钥 | (见 .env 或 Google Cloud Console) |
 | 创建日期 | 2026-03-26 |
 
 **gog CLI 配置:**
 - WSL2 本地: `~/.config/gogcli/` (credentials.json + keyring/)
 - 容器内: `/home/node/.config/gogcli/` (从 WSL2 复制)
-- Keyring password: 见 `.secrets.md` (环境变量 `GOG_KEYRING_PASSWORD`)
+- Keyring password: `123123` (环境变量 `GOG_KEYRING_PASSWORD`)
 - 容器重建后需要重新: 1) 安装 gog binary 2) 复制 gogcli 目录 3) `gog auth credentials set`
 
 **已认证的邮箱账号:**
