@@ -23,3 +23,5 @@
 - USER.md 只放献之的个人信息，不放工具/操作指南
 - MEMORY.md 由 Olivia 自主维护，不要手动覆盖
 - 工具用法、命令参考、API 路径等能写进 TOOLS.md 的优先写进 TOOLS.md，不要散落在其他文件里
+- PowerShell 脚本中**不要直接写中文字符串**，会因编码问题导致解析失败。用英文写 prompt 让 LLM 翻译。详见 `.claude/rules/powershell-scripts.md`
+- 敏感信息放 `.secrets.md`（已被 .gitignore 排除），DEPLOYMENT.md 里用 `(见 .secrets.md)` 引用
