@@ -1,1 +1,7 @@
 .secrets.md
+.claude/claudeclaw/daemon.pid
+.claude/claudeclaw/session.json
+.claude/claudeclaw/state.json
+.claude/claudeclaw/logs/
+.claude/claudeclaw/whisper/
+.claude/settings.local.json
