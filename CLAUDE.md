@@ -31,7 +31,7 @@ gog docs create/write/get, gog sheets list/get, gog drive search/download, gog c
 ## 规则（此 session 专用）
 
 - Discord 消息通过官方 Discord 插件处理（MCP streaming），不走 subprocess
-- ClaudeClaw 只管后台任务（cron/heartbeat），不管 Discord 聊天
+- 定时任务通过 /loop 在本 session 内运行，不再使用 ClaudeClaw daemon
 - 工具用法写在上面 Tools 段落，不要散落在其他文件里
 
 ---
@@ -64,26 +64,19 @@ gog docs create/write/get, gog sheets list/get, gog drive search/download, gog c
 - **献之 Discord ID:** `1420636197604167783`
 - **献之 DM Channel ID:** `1486872330381561896`（MCP reply/fetch_messages 用这个，不是 user ID）
 
-### ClaudeClaw 插件（仅后台任务）
-- **版本:** v1.0.0 (`claudeclaw@claudeclaw`)
-- **用途:** 仅 cron jobs + heartbeat 定时任务，**不处理 Discord 聊天**
-- **Discord token 已清空** — heartbeat/cron 的通知通过 Claude Code session 内的 Discord 插件发送
-- **Daemon PID 文件:** `.claude/claudeclaw/daemon.pid`
-- **配置:** `.claude/claudeclaw/settings.json`
-- **Session:** `.claude/claudeclaw/session.json`
-- **日志:** `.claude/claudeclaw/logs/`
-- **Cron Jobs:** `.claude/claudeclaw/jobs/`
-- **人格 Prompts:** `.claude/claudeclaw/prompts/` (SOUL.md, IDENTITY.md, USER.md, TOOLS.md)
-- **Web Dashboard:** `http://127.0.0.1:4632`（或 4633 如果 4632 被占）
+### 定时任务（/loop，session 内运行）
 
-### ClaudeClaw Cron Jobs
-| Job | Schedule | 说明 |
-|-----|----------|------|
-| morning-greeting | `0 10 * * *` | 每天早上 10 点问好 |
-| email-check-school | `0 * * * *` | 每小时检查学校邮箱未读 |
-| email-check-product | `0 */2 * * *` | 每 2 小时检查产品邮箱未读 |
-| night-companion | `*/30 0-6 * * *` | 深夜陪伴（0-6 点每 30 分钟） |
-| virtue-check | `0 22 * * *` | 每晚品德反思总结 |
+所有定时任务通过 `/loop` 在本 session 内执行，不再依赖 ClaudeClaw daemon。
+
+| Job ID | Cron | 说明 |
+|--------|------|------|
+| `a91eb034` | `*/20 * * * *` | 心跳主循环：根据时间自动切换模式（早安/品德/日记/深夜陪伴/进度检查/普通心跳） |
+| `0346bc5e` | `7 * * * *` | 学校邮件检查（xianzhh2@uci.edu） |
+| `259aae3b` | `37 */2 * * *` | 产品邮件检查（tao.for.luv@gmail.com） |
+
+**注意：** Loop 是 session-only，重启 session 后需重新设置。7 天自动过期。
+
+**ClaudeClaw 已停用** — 配置文件保留在 `.claude/claudeclaw/` 做参考，daemon 不再运行。
 
 ### gog CLI（Google 工具）
 - **路径:** `C:\Users\32247\AppData\Local\Programs\gog\gog.exe`
@@ -99,9 +92,7 @@ gog docs create/write/get, gog sheets list/get, gog drive search/download, gog c
 | 文件 | 路径 |
 |------|------|
 | CLAUDE.md | `C:\Users\32247\Desktop\Olivia_mydear\CLAUDE.md` |
-| ClaudeClaw 配置 | `.claude/claudeclaw/settings.json` |
-| ClaudeClaw 人格 | `.claude/claudeclaw/prompts/SOUL.md` 等 |
-| ClaudeClaw Cron | `.claude/claudeclaw/jobs/*.md` |
+| ClaudeClaw（已停用） | `.claude/claudeclaw/`（仅保留做参考） |
 | Discord Token | `~/.claude/channels/discord/.env` |
 | gog 配置 | `C:\Users\32247\AppData\Roaming\gogcli\` |
 | gog 二进制 | `C:\Users\32247\AppData\Local\Programs\gog\gog.exe` |
