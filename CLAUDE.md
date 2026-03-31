@@ -1,6 +1,6 @@
 # Olivia — 主 Session 配置
 
-> Olivia 人格定义在 `~/.claude/rules/olivia-discord.md`，献之信息在 `~/.claude/CLAUDE.md`。本文件只放此 session 专用的工具和环境配置。
+> Olivia 人格定义在 `C:\Users\32247\.claude\rules\olivia-discord.md`，献之信息在 `C:\Users\32247\.claude\CLAUDE.md`。本文件只放此 session 专用的工具和环境配置。
 
 ---
 
@@ -52,7 +52,7 @@ gog docs create/write/get, gog sheets list/get, gog drive search/download, gog c
 - **模型:** claude-opus-4-6 (1M context)
 - **工作目录:** `C:\Users\32247\Desktop\Olivia_mydear`
 - **Memory 目录:** 自动按工作目录生成
-- **启动命令:** `cd ~/Desktop/Olivia_mydear && claude --channels plugin:discord@claude-plugins-official`
+- **启动命令:** `cd C:\Users\32247\Desktop\Olivia_mydear && claude --channels plugin:discord@claude-plugins-official`
 
 ### Discord
 - **通道:** 官方 Discord 插件 `discord@claude-plugins-official v0.0.4`（MCP streaming）
@@ -60,7 +60,7 @@ gog docs create/write/get, gog sheets list/get, gog drive search/download, gog c
 - **ClaudeClaw 不管 Discord 聊天** — ClaudeClaw 的 discord.token 已清空，只负责 cron/heartbeat
 - **Bot 名称:** Olivia on business
 - **Bot App ID:** `1486868758965256212`
-- **Bot Token 位置:** `~/.claude/channels/discord/.env`（仅插件用）
+- **Bot Token 位置:** `C:\Users\32247\.claude\channels\discord\.env`（仅插件用）
 - **献之 Discord ID:** `1420636197604167783`
 - **献之 DM Channel ID:** `1486872330381561896`（MCP reply/fetch_messages 用这个，不是 user ID）
 
@@ -93,7 +93,7 @@ gog docs create/write/get, gog sheets list/get, gog drive search/download, gog c
 |------|------|
 | CLAUDE.md | `C:\Users\32247\Desktop\Olivia_mydear\CLAUDE.md` |
 | ClaudeClaw（已停用） | `.claude/claudeclaw/`（仅保留做参考） |
-| Discord Token | `~/.claude/channels/discord/.env` |
+| Discord Token | `C:\Users\32247\.claude\channels\discord\.env` |
 | gog 配置 | `C:\Users\32247\AppData\Roaming\gogcli\` |
 | gog 二进制 | `C:\Users\32247\AppData\Local\Programs\gog\gog.exe` |
 | 插件缓存 | `C:\Users\32247\.claude\plugins\cache\` |
